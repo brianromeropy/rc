@@ -1,0 +1,541 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #333;
+    background-color: #fff;
+    /* Fondo blanco */
+}
+
+/* Barra de Navegación */
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: linear-gradient(to right, #111, #c0beb2);
+    /* Degradado invertido (negro a dorado) */
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease;
+    /* Efecto de transición en el fondo */
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    /* Alinea verticalmente los elementos de navegación */
+}
+
+
+/* Logo */
+.navbar-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    transition: transform 0.3s ease;
+    padding-left: 70px;
+    /*ajustar el logo un poco a la derecha*/
+}
+
+/* Efecto en el logo al pasar el ratón */
+.navbar-logo:hover {
+    transform: scale(1.1);
+    /* Efecto de zoom en el logo */
+}
+
+/* Estilo para los enlaces de navegación */
+.nav-link {
+    margin-left: 1.5rem;
+    text-decoration: none;
+    color: #111112;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Efecto en los enlaces de navegación al pasar el ratón */
+.nav-link:hover {
+    color: #ffd700;
+    /* Color dorado al pasar el ratón */
+    transform: scale(1.1);
+    /* Efecto de zoom en los enlaces */
+}
+
+
+/* Estilo general del logo */
+.logo-empresa {
+    width: 60px;
+    height: 60px;
+    border: 3px solid #FFD700;
+    /* Borde dorado */
+    border-radius: 50%;
+    background-color: #333;
+    /* Fondo negro */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* Efecto de resplandor dorado */
+.logo-empresa::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 50%;
+    background: rgba(255, 215, 0, 0.3);
+    /* Dorado translúcido */
+    z-index: -1;
+    transition: transform 0.6s ease;
+    transform: scale(1);
+    opacity: 0;
+}
+
+/* Efecto de rotación y resplandor al pasar el cursor */
+.logo-empresa:hover {
+    transform: rotate(10deg) scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+}
+
+.logo-empresa:hover::before {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+/* Estilo para las letras dentro del logo */
+.logo-text {
+    font-family: Arial, sans-serif;
+    animation: textPulse 1.5s infinite alternate, colorShift 3s infinite alternate;
+}
+
+
+
+
+/* Dropdown para Productos */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f2f2f2;
+    /* Fondo gris */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-item {
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: #333;
+    display: block;
+    transition: background 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #e1e1e1;
+    /* Color gris claro al pasar el mouse */
+}
+
+/* Sección de Productos Destacados */
+.section.productos {
+    padding: 4rem 2rem;
+    /* Asegura que haya suficiente espacio en la parte superior */
+    background-color: #fff;
+    text-align: center;
+    color: #333;
+    margin-top: 5rem;
+    /* Espacio adicional para que no se superponga con la barra de navegación */
+}
+
+.section.productos h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.section.productos p {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    color: #666;
+}
+
+/* Contenedor de Tarjetas de Productos */
+.product-cards {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+/* Tarjetas de Productos */
+.product-card {
+    position: relative;
+    overflow: hidden;
+    width: 280px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+/* Imagen del Producto */
+.product-card img.product-image {
+    width: 100%;
+    height: auto;
+    transition: filter 0.3s ease;
+}
+
+.product-card:hover img.product-image {
+    filter: blur(3px);
+}
+
+/* Información del Producto */
+.product-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.product-card:hover .product-info {
+    opacity: 1;
+}
+
+.product-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-info p {
+    font-size: 1rem;
+}
+
+
+/* Estilos para cada categoría de productos */
+.product-category {
+    background-color: #f8f8f8;
+    /* Fondo gris claro */
+    padding: 1.5rem;
+    margin: 1.5rem auto;
+    border-radius: 10px;
+    max-width: 600px;
+    text-align: left;
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    /* Para la animación de deslizamiento */
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Sección de Servicios */
+/* Si necesitas también asegurar un centrado vertical, aplica este estilo */
+.section.servicios {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 3rem 2rem;
+    color: #333;
+    margin-top: 4rem;
+}
+
+.section.servicios h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.section.servicios p {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    color: #666;
+}
+
+
+
+/* Estilo de la imagen dentro de la tarjeta */
+.servicio-item .servicio-image {
+    width: 100%;
+    /* Hace que la imagen ocupe todo el ancho de la tarjeta */
+    height: 200px;
+    /* Define la altura para mantener consistencia */
+    object-fit: cover;
+    /* Asegura que la imagen se recorte y cubra completamente el área */
+    border-radius: 10px;
+    /* Bordes redondeados */
+    transition: transform 0.3s ease;
+    /* Efecto suave al pasar el ratón */
+}
+
+/* Efecto de card con hover */
+.servicio-item {
+    background-color: #f2f2f2;
+    /* Fondo gris claro */
+    border-radius: 10px;
+    overflow: hidden;
+    /* Para asegurarse que la imagen no se salga de los bordes */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 350px;
+    /* Altura fija para todas las tarjetas */
+    padding: 1rem;
+}
+
+.servicio-item:hover {
+    transform: translateY(-10px);
+    /* Eleva ligeramente la tarjeta */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* Aumenta la sombra en hover */
+}
+
+/* Título de la tarjeta */
+.servicio-item h3 {
+    font-size: 1.4rem;
+    margin-top: 1rem;
+    color: #333;
+}
+
+/* Descripción debajo del título */
+.servicio-item p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Cuadrícula de servicios */
+.servicio-grid {
+    display: flex;
+    justify-content: space-between;
+    /* Distribuye las tarjetas con espacio entre ellas */
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+    /* Para que las tarjetas se acomoden bien en pantallas más pequeñas */
+}
+
+/*Seccion de Historia, vision y mision*/
+#historia-mision-vision {
+    background-color: #f4f4f4;
+    padding: 50px 20px;
+    text-align: center;
+    color: #333;
+}
+
+#historia-mision-vision .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #111;
+    font-weight: bold;
+}
+
+.history,
+.vision,
+.mision {
+    background-color: #fff;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section-historia-mision-vision h3 {
+    font-size: 2rem;
+    color: #a4a4a3;
+    /* O el color de tu logo */
+    margin-bottom: 10px;
+}
+
+.section-historia-mision-vision p {
+    font-size: 1.1rem;
+    color: #606060;
+    line-height: 1.6;
+}
+
+
+/* Sección de Contacto */
+.section.contacto {
+    padding: 3rem 2rem;
+    text-align: center;
+    /* Asegúrate de que esté centrado */
+    color: #333;
+}
+
+#map-container {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 400px; /* Ajusta según necesites */
+}
+
+#map {
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+    border-radius: 10px;
+}
+
+
+.btn {
+    display: inline-block;
+    background-color: #146914;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-top: 1rem;
+    /* Añadir un margen superior para separar el botón del texto */
+}
+
+/* Iconos de Redes Sociales con Texto */
+.social-icons {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icon i {
+    font-size: 1.8rem;
+    margin-right: 0.5rem;
+}
+
+.social-icon:hover {
+    color: #529763;
+    /* Cambia el color al pasar el ratón */
+}
+
+.social-icon span {
+    font-weight: normal;
+}
+
+/* Pie de Página */
+.footer {
+    background-color: #333;
+    /* Fondo negro */
+    color: #e8e6e0;
+    /* Texto dorado */
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* Estilo para los enlaces en el footer */
+.footer a {
+    color: #c0beb2;
+    /* Enlaces dorados */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Efecto hover para los enlaces */
+.footer a:hover {
+    color: #ffebcd;
+    /* Cambia a un tono dorado claro al pasar el cursor */
+}
+
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes logo-pulse {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.05);
+    }
+}
+
+/* Efecto de latido para las letras */
+@keyframes textPulse {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.1);
+    }
+}
+
+/* Desplazamiento de color suave para las letras */
+@keyframes colorShift {
+    from {
+        color: #ffffff;
+    }
+
+    to {
+        color: #ffebcd;
+        /* Color marfil claro */
+    }
+}

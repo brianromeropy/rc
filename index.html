@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RC Tienda Tecnológica</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- Font Awesome para los iconos de redes sociales -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+</head>
+
+<body>
+
+    <!-- Barra de Navegación -->
+    <header class="navbar">
+        <div class="logo-empresa">
+            <span class="logo-text">RC</span>
+        </div>
+        <h1 class="navbar-logo"><!--Tu tienda--></h1>
+        <nav>
+            <div class="dropdown">
+                <a href="#" class="dropdown-toggle nav-link">Productos</a>
+                <div class="dropdown-menu">
+                    <a href="display.html" class="dropdown-item">Display</a>
+                    <a href="baterias.html" class="dropdown-item">Baterías</a>
+                    <a href="camara.html" class="dropdown-item">Cámara</a>
+                    <a href="flex_carga.html" class="dropdown-item">Flex de carga</a>
+                    <a href="plaquetita_carga.html" class="dropdown-item">Plaquetita de carga</a>
+                    <a href="tactil.html" class="dropdown-item">Táctil</a>
+                    <a href="cristal.html" class="dropdown-item">Cristal</a>
+                </div>
+            </div>
+            <a href="#servicios" class="nav-link">Servicios</a>
+            <a href="#contacto" class="nav-link">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- Sección de Producto Destacado -->
+    <section class="section productos" id="productos">
+        <h2 class="animate-fade">Nuestros Productos</h2>
+        <p class="animate-fade">Descubre nuestra amplia selección de repuestos, herramientas e insumos para dispositivos
+            móviles.</p>
+
+        <!-- Tarjetas de Productos Destacados -->
+        <div class="product-cards">
+            <!-- Tarjeta Repuestos -->
+            <div class="product-card">
+                <img src="image/Display.jpg" alt="Repuestos" class="product-image">
+                <div class="product-info">
+                    <h3>Repuestos</h3>
+                    <p>Componentes de alta calidad para reparar y optimizar dispositivos móviles.</p>
+                </div>
+            </div>
+
+            <!-- Tarjeta Herramientas -->
+            <div class="product-card">
+                <img src="image/mechanic.jpg" alt="Herramientas" class="product-image">
+                <div class="product-info">
+                    <h3>Herramientas</h3>
+                    <p>Equipos y herramientas especializadas para reparaciones precisas y profesionales.</p>
+                </div>
+            </div>
+
+            <!-- Tarjeta Insumos -->
+            <div class="product-card">
+                <img src="image/AMTECH.jpg" alt="Insumos" class="product-image">
+                <div class="product-info">
+                    <h3>Insumos</h3>
+                    <p>Accesorios y materiales esenciales para el mantenimiento de dispositivos móviles.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Más categorías de productos... -->
+    </section>
+
+    <!-- Sección de Servicios -->
+    <section class="section servicios" id="servicios">
+        <h2 class="animate-fade">Servicios de Reparación</h2>
+        <p class="animate-fade">Ofrecemos servicio de reparación de pantallas, cambio de baterías y mucho más.</p>
+        <div class="servicio-grid">
+            <!-- Card 1: Cambio de Pantallas -->
+            <div class="servicio-item animate-slide">
+                <img src="image/pantalla.png" alt="Cambio de Pantalla" class="servicio-image">
+                <h3>Cambio de Pantallas</h3>
+                <p>Reparación rápida y profesional.</p>
+            </div>
+
+            <!-- Card 2: Reparación de Baterías -->
+            <div class="servicio-item animate-slide">
+                <img src="image/Bateria.jpg" alt="Reparación de Baterías" class="servicio-image">
+                <h3>Reparación de Baterías</h3>
+                <p>Extiende la vida útil de tu dispositivo.</p>
+            </div>
+
+            <!-- Card 3: Actualización de Software -->
+            <div class="servicio-item animate-slide">
+                <img src="image/actualizacion.jpg" alt="Actualización de Software" class="servicio-image">
+                <h3>Actualización de Software</h3>
+                <p>Mantén tu dispositivo a la vanguardia.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="historia-mision-vision">
+        <div class="container">
+            <h2 class="section-title">Nuestra Historia, Misión y Visión</h2>
+
+            <div class="history">
+                <h3><i class="fas fa-book"></i> Historia</h3>
+                <p>
+                    En RC, comenzamos en 2010 con el objetivo de ofrecer componentes de alta calidad y un servicio de
+                    reparación de celulares eficiente y accesible para todos. Desde entonces, hemos crecido
+                    constantemente, ofreciendo más productos y servicios para satisfacer las necesidades de nuestros
+                    clientes.
+                </p>
+            </div>
+
+            <div class="vision">
+                <h3><i class="fas fa-eye"></i> Visión</h3>
+                <p>
+                    Nuestra visión es convertirnos en el líder del mercado de repuestos y reparaciones para dispositivos
+                    móviles en todo el Paraguay, proporcionando productos de la más alta calidad y un servicio
+                    excepcional que siempre se anticipe a las expectativas de nuestros clientes.
+                </p>
+            </div>
+
+            <div class="mision">
+                <h3><i class="fas fa-bullseye"></i> Misión</h3>
+                <p>
+                    En RC, nuestra misión es ofrecer soluciones rápidas, accesibles y de confianza a todos nuestros
+                    clientes, asegurando que sus dispositivos móviles estén siempre en perfectas condiciones para su
+                    uso. Trabajamos con un equipo comprometido y capacitado para ofrecer un servicio profesional y de
+                    calidad.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Sección de Contacto -->
+    <section class="section contacto" id="contacto">
+        
+        <h2 class="animate-fade">Contáctanos</h2>
+        <p class="animate-fade">Estamos aquí para ayudarte. Visítanos o contáctanos por WhatsApp.</p>
+        <div id="map-container">
+            <div id="map" style="width: 100%; max-width: 400px; height: 300px; border-radius: 10px;"></div>
+        </div>
+        
+        
+        <!--Para añadir la ubicacion con google maps-->
+        <a href="https://wa.me/+595984708580" class="btn animate-fade">Enviar mensaje</a>
+        <!-- Iconos de Redes Sociales -->
+        <div class="social-icons">
+            <a href="https://www.instagram.com/Raulcell1" target="_blank" class="social-icon"><i
+                    class="fab fa-instagram"></i>
+                <span>@Raulcell1</span>
+            </a>
+            <a href="https://www.facebook.com/RaulCell" target="_blank" class="social-icon"><i
+                    class="fab fa-facebook"></i>
+                <span>Raul Cell</span>
+            </a>
+            <a href="https://wa.me/595984708580" target="_blank" class="social-icon">
+                <i class="fab fa-whatsapp"></i>
+                <span>+595 984 708580</span>
+            </a>
+        </div>
+        
+    </section>
+
+    <!-- Pie de Página -->
+    <footer class="footer">
+        <p>&copy; 2025 RC Tienda Tecnológica. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+</body>
+
+</html>
